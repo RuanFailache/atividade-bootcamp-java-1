@@ -18,7 +18,7 @@ public class FibonacciController {
 
     @GetMapping("{number}")
     public ResponseEntity<FibonacciDto> calculate(@PathVariable Long number) {
-        var value = this.fibonacciService.calculate(number);
+        var value = this.fibonacciService.getSequence(number);
         var dto = new FibonacciDto(value);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

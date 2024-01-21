@@ -15,31 +15,24 @@ class FibonacciServiceTest {
 
     @Test
     void testCalculate_When_NumberEqual1() {
-        var result = sut.calculate(1L);
-        assertEquals(BigInteger.ONE, result);
-    }
-
-    @Test
-    void testCalculate_When_NumberEqual2() {
-        var result = sut.calculate(2L);
-        assertEquals(BigInteger.TWO, result);
+        var result = sut.getSequence(1L);
+        assertEquals(1, result.size());
+        assertEquals(BigInteger.ZERO, result.get(0));
     }
 
     @Test
     void testCalculate_When_NumberEqual3() {
-        var result = sut.calculate(3L);
-        assertEquals(BigInteger.valueOf(3), result);
-    }
-
-    @Test
-    void testCalculate_When_NumberEqual5() {
-        var result = sut.calculate(5L);
-        assertEquals(BigInteger.valueOf(8), result);
+        var result = sut.getSequence(5L);
+        assertEquals(5, result.size());
+        assertEquals(BigInteger.ZERO, result.get(0));
+        assertEquals(BigInteger.valueOf(3), result.get(result.size() - 1));
     }
 
     @Test
     void testCalculate_When_NumberEqual10() {
-        var result = sut.calculate(10L);
-        assertEquals(BigInteger.valueOf(89), result);
+        var result = sut.getSequence(10L);
+        assertEquals(10, result.size());
+        assertEquals(BigInteger.ZERO, result.get(0));
+        assertEquals(BigInteger.valueOf(34), result.get(result.size() - 1));
     }
 }

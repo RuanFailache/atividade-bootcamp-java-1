@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigInteger;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
@@ -14,30 +16,30 @@ class FibonacciServiceTest {
     @Test
     void testCalculate_When_NumberEqual1() {
         var result = sut.calculate(1L);
-        assertEquals(1L, result);
+        assertEquals(BigInteger.ONE, result);
     }
 
     @Test
     void testCalculate_When_NumberEqual2() {
         var result = sut.calculate(2L);
-        assertEquals(2L, result);
+        assertEquals(BigInteger.TWO, result);
     }
 
     @Test
     void testCalculate_When_NumberEqual3() {
         var result = sut.calculate(3L);
-        assertEquals(3L, result);
+        assertEquals(BigInteger.valueOf(3), result);
     }
 
     @Test
     void testCalculate_When_NumberEqual5() {
         var result = sut.calculate(5L);
-        assertEquals(8L, result);
+        assertEquals(BigInteger.valueOf(8), result);
     }
 
     @Test
     void testCalculate_When_NumberEqual10() {
         var result = sut.calculate(10L);
-        assertEquals(89L, result);
+        assertEquals(BigInteger.valueOf(89), result);
     }
 }

@@ -7,7 +7,7 @@ import java.math.BigInteger;
 @Service
 public class FibonacciService {
     public BigInteger calculate(Long number) {
-        return this.sum(number, BigInteger.valueOf(0), BigInteger.valueOf(1));
+        return this.sum(number, BigInteger.ZERO, BigInteger.ONE);
     }
 
     private BigInteger sum(Long number, BigInteger previous, BigInteger current) {
